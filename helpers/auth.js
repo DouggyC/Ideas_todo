@@ -4,6 +4,6 @@ module.exports = {
       return next();
     }
     req.flash('error_msg', 'Authentication Required');
-    res.redirect('/users/login');
+    res.redirect('/users/register');
   }
 }

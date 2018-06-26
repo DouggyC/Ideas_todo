@@ -33,7 +33,7 @@ router.post('/register', (req, res) => {
 
   if (req.body.password != req.body.password2) {
     errors.push({
-      text: 'Passwords do not match'
+      text: 'Password does not match'
     });
   }
 
@@ -72,7 +72,7 @@ router.post('/register', (req, res) => {
               newUser.password = hash;
               newUser.save()
                 .then(user => {
-                  req.flash('success_msg', 'New User registered and can login');
+                  req.flash('success_msg', 'New User registered. Please login');
                   res.redirect('/users/login');
                 })
                 .catch(err => {
